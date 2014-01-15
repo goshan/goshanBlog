@@ -14,6 +14,7 @@ class BlogsController < ApplicationController
   end
   
   def index
+    @blogs = Blog.where(:blog_type_id => params[:blog_type_id])
   end
   
   def show
