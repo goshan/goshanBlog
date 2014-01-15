@@ -1,8 +1,8 @@
 class BlogsController < ApplicationController
   
-  before_filter :auth, :include => [:new, :create, :index]
+  before_filter :auth, :only => [:new, :create]
   
-  layout "tools", :include => [:new, :index]
+  layout "tools", :only => [:new, :index]
   
   def new 
     @blog = Blog.new
@@ -14,6 +14,10 @@ class BlogsController < ApplicationController
   end
   
   def index
+  end
+  
+  def show
+    @blog = Blog.find_by_id(params[:id])
   end
   
 end

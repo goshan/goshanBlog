@@ -12,5 +12,5 @@
 	- @blog_types.each do |type|
 		%tr.type_info
 			%td= link_to type.name, type
-			%td= type.created_at.to_date
+			%td= type.updated_at.to_date
 			%td= type.blogs_count
