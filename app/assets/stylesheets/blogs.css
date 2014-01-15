@@ -1,0 +1,18 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+#blog_title{
+	display: block;
+	height: 30px;
+	width: 500px;
+	margin-bottom: 20px;
+}
+#blog_text{
+	display: block;
+	height: 400px;
+	width: 500px;
+	margin-bottom: 10px;
+}

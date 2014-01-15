@@ -1,0 +1,57 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+#tools_content{
+	width: 780px;
+	margin: 0 auto;
+}
+
+.title1{
+	font-size: 38px;
+	font-family: fantasy;
+	color: #21bbe1;
+}
+
+.title_input_word{
+	line-height: 30px;
+	font-size: 21px;
+	color: #707070;
+}
+
+.text_input_word{
+	line-height: 20px;
+	font-size: 15px;
+	color: #606060;
+	resize: none;
+}
+
+.confirm_button{
+	border-radius: 5px;
+	height: 40px;
+	width: 70px;
+	font-size: 15px;
+	background-color: #3c87d1;
+	border: 0;
+	color: white;
+	-webkit-appearance: none;
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(47, 168, 214);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(47, 168, 214);
+	box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(47, 168, 214);
+}
+.confirm_button:hover{
+	background-color: #386897;
+	-webkit-box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(24, 95, 122);
+	-moz-box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(24, 95, 122);
+	box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(24, 95, 122);
+}

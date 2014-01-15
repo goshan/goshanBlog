@@ -1,0 +1,16 @@
+.title1 分类列表
+#new_type= link_to "新建分类", new_blog_type_path
+%table#blog_types
+	%tr
+		%td 类型
+		%td 建立时间
+		%td 文章数
+	%tr
+		%td 默认分类
+		%td 1988-12-08
+		%td= @default_blogs.count  
+	- @blog_types.each do |type|
+		%tr.type_info
+			%td= link_to type.name, type
+			%td= type.created_at.to_date
+			%td= type.blogs_count
