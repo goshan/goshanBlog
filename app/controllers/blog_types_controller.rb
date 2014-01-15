@@ -1,8 +1,8 @@
 class BlogTypesController < ApplicationController
   
-  before_filter :auth, :only => [:new, :create]
+  before_filter :auth, :only => [:new, :create, :index, :show]
   
-  layout "tools", :only => [:new, :index]
+  layout "tools", :only => [:new, :index, :show]
   
   def new 
     @blog_type = BlogType.new
@@ -18,6 +18,10 @@ class BlogTypesController < ApplicationController
   def index
     @default_blogs = Blog.where(:blog_type_id => 0)
     @blog_types = BlogType.all
+  end
+  
+  def show
+    @blog_type = BlogType.find_by_id(params[:id])
   end
   
 end

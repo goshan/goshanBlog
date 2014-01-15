@@ -5,13 +5,13 @@
 
 
 
-#blog_type_name{
+#new_blog_type #blog_type_name{
 	display: block;
 	height: 30px;
 	width: 500px;
 	margin-bottom: 20px;
 }
-#blog_type_desc{
+#new_blog_type #blog_type_desc{
 	display: block;
 	height: 100px;
 	width: 500px;
