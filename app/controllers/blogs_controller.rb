@@ -21,4 +21,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find_by_id(params[:id])
   end
   
+  def home
+  end
+  
 end

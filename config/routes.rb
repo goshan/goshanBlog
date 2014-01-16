@@ -30,6 +30,14 @@ GBlog::Application.routes.draw do
   
   resources :blog_types do
   end
+  
+  
+  match "admin_edit", :to => "admins#admin_edit"
+  post "admin_update", :to => "admins#admin_update"
+  match "status_edit", :to => "admins#status_edit"
+  post "status_update", :to => "admins#status_update"
+  match "avatar_edit", :to => "admins#avatar_edit"
+  put "avatar_update", :to => "admins#avatar_update"
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -54,7 +62,7 @@ GBlog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  #root :to => "blogs#new"
+  root :to => "blogs#home"
 
   # See how all your routes lay out with "rake routes"
 

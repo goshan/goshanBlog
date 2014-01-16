@@ -1,0 +1,23 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+
+/* admin_edit */
+#admin_edit input[type="text"]{
+	width: 150px;
+}
+
+#admin_edit textarea{
+	width: 150px;
+	height: 50px;
+	resize: none;
+}
+
+/* status_edit */
+#status_edit textarea{
+	width: 400px;
+	height: 100px;
+}

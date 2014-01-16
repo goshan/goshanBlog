@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'memcache-client'
 gem 'json'
 
+gem 'paperclip'
+
 group :development do
  	gem "haml-rails"
 end

@@ -1,0 +1,29 @@
+.title1 修改资料
+#admin_edit
+	= form_tag "/admin_update", :method => "post" do
+		%table
+			%tr
+				%td 昵称
+				%td= text_field_tag :name, @admin.name
+			%tr
+				%td 生日
+				%td= text_field_tag :birthday, @admin.birthday
+			%tr
+				%td 公司
+				%td= text_area_tag :company, @admin.company
+			%tr
+				%td 职位
+				%td= text_field_tag :title, @admin.title
+			%tr
+				%td QQ
+				%td= text_field_tag :qq, @admin.qq
+			%tr
+				%td 新浪微博
+				%td= text_area_tag :weibo, @admin.weibo
+			%tr
+				%td 微信号
+				%td= text_field_tag :wechat, @admin.wechat
+			%tr
+				%td 邮箱
+				%td= text_field_tag :mail, @admin.mail
+		= submit_tag

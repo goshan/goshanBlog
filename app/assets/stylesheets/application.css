@@ -12,11 +12,40 @@
  *= require_tree .
  */
 
-#tools_content{
-	width: 780px;
+body{
+	width: 980px;
+	height: 605px;
 	margin: 0 auto;
 }
 
+/* nav_bar */
+#nav_bar{
+	height:90px;
+	width: 980px;
+	background-color: #21bbe1;
+}
+
+#logo{
+	vertical-align: middle;
+	border: 1px solid #21bbe1;
+}
+
+#slogen{
+	color: white;
+	font-size: 30px;
+	margin-left: 15px;
+	vertical-align: middle;
+}
+
+/* side_bar */
+#side_bar{
+	width: 230px;
+	height: 495px;
+	border: 1px solid #21bbe1;
+}
+
+
+/* normal widget style*/
 .title1{
 	font-size: 38px;
 	font-family: fantasy;
@@ -60,3 +89,6 @@
 	-moz-box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(24, 95, 122);
 	box-shadow: 2px 2px 2px 0px rgba(12, 39, 68, 1), 3px 3px 7px 1px rgb(24, 95, 122);
 }
+
+
+

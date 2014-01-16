@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id="nav_bar">
+		<%= image_tag "/assets/logo.png", :id => "logo"%>
+		<span id="slogen">:FallenCoder => "goshan"</span>
+	</div>
+	<div id="side_bar">
+	</div>
+	<div id="content">
+		<%= yield %>
+	</div>
 </body>
 </html>

@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140111083536) do
+ActiveRecord::Schema.define(:version => 20140116060259) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "name",                :null => false
+    t.string   "birthday"
+    t.string   "company"
+    t.string   "title"
+    t.string   "qq"
+    t.string   "weibo"
+    t.string   "wechat"
+    t.string   "mail"
+    t.string   "status"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
   create_table "blog_types", :force => true do |t|
     t.string   "name",                       :null => false
