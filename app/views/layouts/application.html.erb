@@ -27,7 +27,7 @@
 			</div>
 			<%hot_types.each do |type| %>
 				<div class="type_item">
-					<%= link_to type.name, "/blogs?type=#{type.id}", :class => "item_name"%>
+					<%= link_to type.name, "/blogs?blog_type_id=#{type.id}", :class => "item_name"%>
 					<span class ="blogs_count"><%= type.blogs_count%></span>
 				</div>
 			<%end%>

@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 class Blog < ActiveRecord::Base
   attr_accessible :title, :blog_type_id, :text
   
@@ -5,7 +7,11 @@ class Blog < ActiveRecord::Base
 
   def type_name
     blog_type = BlogType.all
-    blog_type[self.blog_type_id-1].name
+    if self.blog_type_id == 0
+      "默认分类"
+    else
+      blog_type[self.blog_type_id-1].name
+    end
   end
   
   def update_time

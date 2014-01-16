@@ -1,8 +1,9 @@
-.title1= @blog_type.name
-.title2= @blog_type.desc
-%table#blog_list
-	- @blog_type.blogs.each do |blog|
-		%tr
-			%td= link_to blog.title, blog
-			%td= blog.read_cnt
-			%td= blog.update_time
+#blog_feed
+	- @blogs.each do |blog|
+		.blog_list_item
+			.blog_list_title= blog.title
+			.blog_list_info
+				.blog_list_type= blog.type_name
+				.blog_list_time= blog.update_time
+			.blog_list_text= blog.text
+			.blog_list_read= link_to "阅读全文", blog
