@@ -1,11 +1,10 @@
 #blog_feed
 	- @blogs.each do |blog|
-		.title= blog.title
-		.info
-			所属分类：
-			= blog.type_name
-			访问次数：
-			= blog.read_cnt
-			= blog.update_time
-		.text= blog.text
+		.blog_list_item
+			.blog_list_title= blog.title
+			.blog_list_info
+				.blog_list_type= blog.type_name
+				.blog_list_time= blog.update_time
+			.blog_list_text= blog.text
+			.blog_list_read= link_to "阅读全文", blog
 			

@@ -107,24 +107,24 @@ a{
 }
 
 /* normal widget style*/
-.title1{
+.head1{
 	font-size: 38px;
 	font-family: fantasy;
 	color: #21bbe1;
 }
 
-.title2{
+.head2{
 	font-size: 25px;
 	color: #4892bb;
 }
 
-.title_input_word{
+.title_input{
 	line-height: 30px;
 	font-size: 21px;
 	color: #707070;
 }
 
-.text_input_word{
+.text_input{
 	line-height: 20px;
 	font-size: 15px;
 	color: #606060;
