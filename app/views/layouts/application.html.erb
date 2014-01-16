@@ -1,3 +1,5 @@
+<%admin = admin_info%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,13 +13,25 @@
 		<%= image_tag "/assets/logo.png", :id => "logo"%>
 		<div id="heading">
 			<div id="slogen">:FallenCoder => "goshan"</div>
-			<div id="status"><%= admin_info.status%></div>
+			<div id="status"><%= admin.status%></div>
 		</div>
 	</div>
 	<div id="side_bar">
-		<%= image_tag admin_info.avatar.url, :id => "avatar"%>
-		<div id="nick_name"><%= admin_info.name%></div>
-		<div id="info"><%= admin_info.company%></div>
+		<%= image_tag admin.avatar.url, :id => "avatar"%>
+		<div id="nick_name"><%= admin.name%></div>
+		<div id="info"><%= admin.company%></div>
+		<div id="hot_types">
+			<div id="hot_types_head">
+				热门分类
+				<%= link_to ">>", "#", :id => "show_types"%>
+			</div>
+			<%hot_types.each do |type| %>
+				<div class="type_item">
+					<%= link_to type.name, "/blogs?type=#{type.id}", :class => "item_name"%>
+					<span class ="blogs_count"><%= type.blogs_count%></span>
+				</div>
+			<%end%>
+		</div>
 	</div>
 	<div id="content">
 		<%= yield %>

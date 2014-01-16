@@ -1,0 +1,11 @@
+#blog_feed
+	- @blogs.each do |blog|
+		.title= blog.title
+		.info
+			所属分类：
+			= blog.type_name
+			访问次数：
+			= blog.read_cnt
+			= blog.update_time
+		.text= blog.text
+			

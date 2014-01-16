@@ -18,6 +18,11 @@ body{
 	margin: 0 auto;
 }
 
+a{
+	color: #5faa15;
+	text-decoration: none;
+}
+
 /* nav_bar */
 #nav_bar{
 	height:90px;
@@ -51,6 +56,7 @@ body{
 	width: 230px;
 	height: 495px;
 	border: 1px solid #21bbe1;
+	display: inline-block;
 }
 
 #side_bar #avatar{
@@ -66,10 +72,39 @@ body{
 
 #side_bar #info{
 	font-size: 18px;
-	margin-top: 10px;
+	margin: 10px 0;
 	text-align: center;
 }
 
+#side_bar #hot_types_head{
+	background-color: #21bbe1;
+	padding: 5px;
+}
+
+#side_bar #show_types{
+	color: white;
+	float: right;
+}
+
+#side_bar .type_item{
+	padding: 5px 15px 5px 5px;
+	margin: 10px 0;
+}
+
+#side_bar .blogs_count{
+	float: right;
+}
+
+/* content */
+#content{
+	width: 746px;
+	height: 495px;
+	border: 1px solid #21bbe1;
+	display: inline-block;
+	margin-left: -4px;
+	vertical-align: top;
+	overflow-y: auto;
+}
 
 /* normal widget style*/
 .title1{

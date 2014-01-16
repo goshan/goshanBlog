@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   
   before_filter :auth, :only => [:new, :create]
   
-  layout "tools", :only => [:new, :index]
+  layout "tools", :only => [:new]
   
   def new 
     @blog = Blog.new
@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
   end
   
   def home
+    @blogs = Blog.order("updated_at desc").limit(10)
   end
   
 end

@@ -5,4 +5,9 @@ module ApplicationHelper
     admin
   end
   
+  def hot_types
+    types = BlogType.order("blogs_count desc").limit(5)
+    types
+  end
+  
 end
