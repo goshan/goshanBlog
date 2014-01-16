@@ -25,16 +25,25 @@ body{
 	background-color: #21bbe1;
 }
 
-#logo{
-	vertical-align: middle;
+#nav_bar #heading{
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 0 0 15px;
+}
+
+#nav_bar #logo{
 	border: 1px solid #21bbe1;
 }
 
-#slogen{
+#nav_bar #slogen{
 	color: white;
 	font-size: 30px;
-	margin-left: 15px;
-	vertical-align: middle;
+	margin-bottom: 15px;
+}
+
+#nav_bar #status{
+	margin-left: 30px;
+	color: #266792;
 }
 
 /* side_bar */
@@ -42,6 +51,23 @@ body{
 	width: 230px;
 	height: 495px;
 	border: 1px solid #21bbe1;
+}
+
+#side_bar #avatar{
+	height: 150px;
+	width: 150px;
+	margin: 10px 40px;
+}
+
+#side_bar #nick_name{
+	font-size: 25px;
+	text-align: center;
+}
+
+#side_bar #info{
+	font-size: 18px;
+	margin-top: 10px;
+	text-align: center;
 }
 
 
