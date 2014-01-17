@@ -1,0 +1,23 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+
+
+/* index */
+#tools_page #return{
+	margin-bottom: 20px;
+}
+
+#tools_page #tools_function{
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid;
+}
+
+#tools_page .current_stat{
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid;
+}

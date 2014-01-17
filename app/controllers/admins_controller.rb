@@ -1,5 +1,7 @@
 class AdminsController < ApplicationController
   
+  before_filter :auth, :except => [:admin_show]
+  
   layout "tools", :except => [:admin_show]
   
   def admin_show

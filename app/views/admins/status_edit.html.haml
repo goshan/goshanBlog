@@ -1,5 +1,5 @@
-.title1 修改状态
+.head1 修改状态
 #status_edit
 	= form_tag "/status_update", :method => "post" do
-		= text_area_tag :status, @status, :class => "text_input_word"
-		= submit_tag
+		= text_area_tag :status, @status, :class => "text_input"
+		= submit_tag "提交", :class => "confirm_button"

@@ -31,6 +31,9 @@ GBlog::Application.routes.draw do
   resources :blog_types do
   end
   
+  resources :tools do 
+  end
+  
   
   match "admin_edit", :to => "admins#admin_edit"
   post "admin_update", :to => "admins#admin_update"
@@ -38,6 +41,7 @@ GBlog::Application.routes.draw do
   post "status_update", :to => "admins#status_update"
   match "avatar_edit", :to => "admins#avatar_edit"
   put "avatar_update", :to => "admins#avatar_update"
+  
 
   # Sample resource route with sub-resources:
   #   resources :products do

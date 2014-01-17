@@ -1,0 +1,16 @@
+#tools_page
+	.head1 后台工具
+	#return= link_to "<< 正常模式", root_path
+	#tools_function
+		- functions.each do |func|
+			.func_item= link_to func[0], func[1]
+	.current_stat
+		%div Blogs
+		%div= @blogs[0]
+		%div= @blogs[1]
+		%div= link_to "新建博客", new_blog_path
+	.current_stat
+		%div BlogTypes
+		%div= @blog_types[0]
+		%div= @blog_types[1]
+		%div= link_to "新建分类", new_blog_type_path

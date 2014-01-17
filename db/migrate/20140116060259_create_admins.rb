@@ -10,6 +10,7 @@ class CreateAdmins < ActiveRecord::Migration
       t.string :wechat
       t.string :mail
       t.string :status
+      t.string :desc
       t.attachment :avatar
 
       t.timestamps
