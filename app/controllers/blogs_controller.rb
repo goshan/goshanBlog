@@ -2,11 +2,10 @@ class BlogsController < ApplicationController
   
   before_filter :auth, :only => [:new, :create]
   
+  layout "tools", :only => [:new]
   
   def new 
     @blog = Blog.new
-    
-    render :layout => "tools"
   end
   
   def create
@@ -20,8 +19,7 @@ class BlogsController < ApplicationController
   
   def show
     @blog = Blog.find_by_id(params[:id])
-    
-    render :layout => "detail"
+    @blog.read_once
   end
   
   def home

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 class Blog < ActiveRecord::Base
-  attr_accessible :title, :blog_type_id, :text
+  attr_accessible :title, :blog_type_id, :text, :read_cnt
   
   belongs_to :blog_type, :counter_cache => :blogs_count
 
@@ -16,6 +16,14 @@ class Blog < ActiveRecord::Base
   
   def update_time
     self.updated_at.strftime("%Y-%m-%d %H:%M")
+  end
+  
+  def content
+    self.text.gsub(/[\r\n]/, "<br>")
+  end
+  
+  def read_once
+    self.update_attributes(:read_cnt => self.read_cnt+1)
   end
   
 end

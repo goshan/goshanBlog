@@ -6,40 +6,67 @@
 
 
 
-/* widget style */
-.blog_list_item{
+/* index */
+#blog_feed .blog_list_item{
 	margin: 10px 0;
 	border-bottom: 1px solid #21bbe1;
 	padding-bottom: 18px;
 }
 
-.blog_list_title{
+#blog_feed .blog_list_title{
 	color: #21bbe1;
 	font-size: 25px;
 	padding: 10px;
 }
 
-.blog_list_info{
+#blog_feed .blog_list_info{
 	color: #21bbe1;
 	font-size: 13px;
 	padding: 5px 10px;
 }
 
-.blog_list_type{
+#blog_feed .blog_list_type{
 	display: inline-block;
 	margin-right: 100px;
 }
 
-.blog_list_time{
+#blog_feed .blog_list_time{
 	display: inline-block;
 }
 
-.blog_list_text{
+#blog_feed .blog_list_text{
 	padding: 10px;
 }
 
-.blog_list_read{
+#blog_feed .blog_list_read{
 	font-size: 13px;
 	float: right;
 	margin-right: 10px;
+}
+
+/* show */
+#blog_detail{
+	margin: 10px;
+}
+
+#blog_detail #blog_title{
+	display: inline-block;
+	margin-right: 15px;
+}
+
+#blog_detail #blog_info{
+	color: #909090;
+	font-size: 14px;
+	display: inline-block;
+}
+
+#blog_detail #blog_content{
+	margin: 30px 0;
+}
+
+#blog_detail #oth_info{
+	float: right;
+	margin-right: 50px;
+	color: #909090;
+	font-size: 13px;
 }

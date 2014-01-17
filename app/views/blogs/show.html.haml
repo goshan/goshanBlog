@@ -1,5 +1,12 @@
-.title1= @blog.title
-.title2
-	= @blog.type_name
-	= @blog.update_time
-#blog_content= @blog.text
+#blog_detail
+	#blog_title.head1= @blog.title
+	#blog_info
+		(
+		= @blog.type_name
+		= ": "
+		= @blog.update_time
+		)
+	#blog_content= @blog.content
+	#oth_info
+		阅读次数：
+		=@blog.read_cnt

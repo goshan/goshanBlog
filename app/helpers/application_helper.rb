@@ -10,4 +10,8 @@ module ApplicationHelper
     types
   end
   
+  def image_link(src, href, image_opt={}, link_opt={})
+    link_to image_tag(src, image_opt), href, link_opt
+  end
+  
 end
