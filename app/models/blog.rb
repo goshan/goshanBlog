@@ -18,12 +18,8 @@ class Blog < ActiveRecord::Base
     self.updated_at.strftime("%Y-%m-%d %H:%M")
   end
   
-  def content
-    self.text.gsub(/[\r\n]/, "<br>")
-  end
-  
   def preview
-    self.text[0..100].gsub(/[\r\n]/, "<br>")
+    self.text[0..100]
   end
   
   def read_once

@@ -6,7 +6,7 @@
 		= ": "
 		= @blog.update_time
 		)
-	#blog_content= @blog.content
+	%pre#blog_content= @blog.text
 	#oth_info
 		阅读次数：
 		=@blog.read_cnt

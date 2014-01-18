@@ -5,5 +5,5 @@
 			.blog_list_info
 				.blog_list_type= blog.type_name
 				.blog_list_time= blog.update_time
-			.blog_list_text= blog.preview
+			%pre.blog_list_text= blog.text
 			.blog_list_read= link_to "阅读全文", blog
