@@ -1,6 +1,6 @@
 .head1 新建分类
 #new_blog_type
-	= form_for @blog_type, :method => "post" do |f|
+	= form_for @blog_type, :url => create_blog_type_tools_path do |f|
 		= f.text_field :name, :class => "title_input"
 		= f.text_area :desc, :class => "text_input"
 		= f.submit "创建", :class => "confirm_button"

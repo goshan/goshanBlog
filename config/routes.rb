@@ -25,23 +25,28 @@ GBlog::Application.routes.draw do
   #     end
   #   end
   
-  resources :blogs do
-  end
+  resources :blogs
   
-  resources :blog_types do
-  end
+  resources :blog_types
   
   resources :tools do 
+    collection do 
+      get "new_blog"
+      post "create_blog"
+      get "new_blog_type"
+      post "create_blog_type"
+      get "show_blog_type"
+    end
   end
   
-  
-  match "admin_edit", :to => "admins#admin_edit"
-  post "admin_update", :to => "admins#admin_update"
-  match "status_edit", :to => "admins#status_edit"
-  post "status_update", :to => "admins#status_update"
-  match "avatar_edit", :to => "admins#avatar_edit"
-  put "avatar_update", :to => "admins#avatar_update"
-  
+  resources :admins do
+    collection do 
+      get "info_edit"
+      get "status_edit"
+      get "avatar_edit"
+      put "admin_update"
+    end
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do

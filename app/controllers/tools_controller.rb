@@ -9,4 +9,28 @@ class ToolsController < ApplicationController
     @blog_types = [BlogType.all.count, BlogType.where("created_at > ?", Time.now.beginning_of_day).count]
   end
   
+  def new_blog
+    @blog = Blog.new
+  end
+  
+  def create_blog
+    @blog = Blog.create!(params[:blog])
+    
+    redirect_to blog_path(@blog)
+  end
+  
+  def new_blog_type
+    @blog_type = BlogType.new
+  end
+  
+  def create_blog_type
+    @blog_type = BlogType.create!(params[:blog_type])
+    
+    redirect_to show_blog_type_tools_path(:blog_type_id => @blog_type.id)
+  end
+  
+  def show_blog_type
+    @blog_type = BlogType.find_by_id(params[:blog_type_id])
+  end
+  
 end
