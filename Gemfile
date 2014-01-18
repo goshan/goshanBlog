@@ -16,6 +16,7 @@ gem 'memcache-client'
 gem 'json'
 
 gem 'paperclip'
+gem 'uglifier'
 
 group :development do
  	gem "haml-rails"
