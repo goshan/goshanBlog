@@ -12,6 +12,12 @@
  *= require_tree .
  */
 
+/* new word type */
+@font-face{
+	font-family: "goshan";
+	src: url("/font/goshan.otf");
+}
+
 body{
 	width: 980px;
 	height: 605px;
@@ -43,10 +49,13 @@ a{
 #nav_bar #slogen{
 	color: white;
 	font-size: 30px;
-	margin-bottom: 15px;
+	font-family: "goshan";
+	margin-bottom: 10px;
 }
 
 #nav_bar #status{
+	font-size: 20px;
+	font-family: "goshan";
 	margin-left: 30px;
 	color: #266792;
 }
@@ -67,6 +76,7 @@ a{
 
 #side_bar #nick_name{
 	font-size: 25px;
+	font-family: "goshan";
 	text-align: center;
 	color: #21bbe1;
 }
@@ -135,6 +145,7 @@ a{
 
 .head2{
 	font-size: 25px;
+	font-family: fantasy;
 	color: #4892bb;
 }
 

@@ -15,4 +15,5 @@
 /tmp
 
 .DS_store
-/public
+/public/avatar/
+/public/photo/
