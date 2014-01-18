@@ -21,3 +21,32 @@
 	padding: 5px;
 	border: 1px solid;
 }
+
+/* new_blog_type */
+#new_blog_type .title_input{
+	display: block;
+	height: 30px;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+#new_blog_type .text_input{
+	display: block;
+	height: 100px;
+	width: 500px;
+	margin-bottom: 10px;
+}
+
+/* new_blog */
+#new_blog .title_input{
+	display: block;
+	width: 500px;
+	margin: 20px 0;
+}
+
+#new_blog .text_input{
+	display: block;
+	height: 300px;
+	width: 500px;
+	margin: 20px 0;
+}

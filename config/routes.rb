@@ -35,7 +35,6 @@ GBlog::Application.routes.draw do
       post "create_blog"
       get "new_blog_type"
       post "create_blog_type"
-      get "show_blog_type"
     end
   end
   

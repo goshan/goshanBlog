@@ -5,20 +5,6 @@
 
 
 
-/* new */
-#new_blog .title_input{
-	display: block;
-	width: 500px;
-	margin: 20px 0;
-}
-
-#new_blog .text_input{
-	display: block;
-	height: 300px;
-	width: 500px;
-	margin: 20px 0;
-}
-
 
 /* index */
 #blog_feed .blog_list_item{

@@ -29,8 +29,4 @@ class ToolsController < ApplicationController
     redirect_to show_blog_type_tools_path(:blog_type_id => @blog_type.id)
   end
   
-  def show_blog_type
-    @blog_type = BlogType.find_by_id(params[:blog_type_id])
-  end
-  
 end

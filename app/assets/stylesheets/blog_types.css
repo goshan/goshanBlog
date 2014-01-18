@@ -5,17 +5,15 @@
 
 
 
-/* new */
-#new_blog_type .title_input{
-	display: block;
-	height: 30px;
-	width: 500px;
-	margin-bottom: 20px;
+/* index */
+#blog_types_feed{
+	margin: 20px;
 }
 
-#new_blog_type .text_input{
-	display: block;
-	height: 100px;
-	width: 500px;
-	margin-bottom: 10px;
+#blog_types_feed tr{
+	height: 35px;
+}
+
+#blog_types_feed td{
+	width: 230px;
 }
