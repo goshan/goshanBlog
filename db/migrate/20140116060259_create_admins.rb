@@ -1,7 +1,8 @@
 class CreateAdmins < ActiveRecord::Migration
   def up
     create_table :admins do |t|
-      t.string :name, :null => false
+      t.string :nick_name, :null => false
+      t.string :true_name
       t.string :birthday
       t.string :company
       t.string :title
@@ -10,7 +11,7 @@ class CreateAdmins < ActiveRecord::Migration
       t.string :wechat
       t.string :mail
       t.string :status
-      t.string :desc
+      t.text :desc
       t.attachment :avatar
       t.attachment :photo
 

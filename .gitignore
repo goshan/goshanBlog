@@ -17,3 +17,4 @@
 .DS_store
 /public/avatar/
 /public/photo/
+/db/schema.rb

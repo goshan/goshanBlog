@@ -1,70 +1,59 @@
 #about_me
 	.map
-		%span.var goshan
+		%span.var= @admin.nick_name
 		%span.oth = {
 	.sub_info
 		%span.cla string
 		%span.var name
 		%span.oth =
-		%span.str "邱晗"
+		%span.str= "\"#{@admin.true_name}\""
 		%span.oth , 
 	.sub_info
 		%span.cla date
 		%span.var birthday
 		%span.oth =
-		%span.obj 1988-12-08
+		%span.obj= @admin.birthday
 		%span.oth ,
 	.sub_info
 		%span.cla location
 		%span.var company
 		%span.oth =
-		%span.str "DeNA"
+		%span.str= "\"#{@admin.company}\""
 		%span.oth ,
 	.sub_info
 		%span.cla string
 		%span.var title
 		%span.oth =
-		%span.str "Engineer"
+		%span.str= "\"#{@admin.title}\""
 		%span.oth ,
 	.sub_info
 		%span.cla long int
 		%span.var qq
 		%span.oth =
-		%span.var 328979319
+		%span.var= @admin.qq
 		%span.oth ,
 	.sub_info
 		%span.cla link
 		%span.var sina_weibo
 		%span.oth =
-		%span= link_to "@邱晗_goshan", "#"
+		%span= link_to "@邱晗_goshan", @admin.weibo, :target => "blank"
 		%span.oth ,
 	.sub_info
 		%span.cla string
 		%span.var wechat
 		%span.oth =
-		%span.str "goshan128"
+		%span.str= "\"#{@admin.wechat}\""
 		%span.oth ,
 	.sub_info
 		%span.cla string
 		%span.var mail
 		%span.oth =
-		%span.str "goshan.hanqiu@gmail.com"
+		%span.str= "\"#{@admin.mail}\""
 	.map 
 		%span.oth }
 	.comment
 		= "/********************************************************************************************"
-		= "/ dsijfg"
-		<br>
-		= "/ dsijfg"
-		<br>
-		= "/ dsijfg"
-		<br>
-		= "/ dsijfg"
-		<br>
-		= "/ dsijfg"
-		<br>
-		= "/ dsijfg"
-		<br>
+		%pre= @admin.desc
 		= "/********************************************************************************************"
 	#about_me_photo= image_tag @admin.photo.url
 		
