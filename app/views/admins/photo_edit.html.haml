@@ -1,5 +1,0 @@
-.head1 修改头像
-#status_edit
-	= form_for @admin, :url => admin_update_admins_path, :html => {:multipart => true} do |f|
-		= f.file_field :avatar
-		= submit_tag

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>about ME</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="nav_bar">
+		<%= image_link "/assets/logo.png", root_path, :id => "logo"%>
+		<div id="heading">
+			<div id="slogen">:FallenCoder => "goshan"</div>
+			<div id="status"><%= admin_info.status%></div>
+		</div>
+	</div>
+	<div id="info_content">
+		<%= yield %>
+	</div>
+</body>
+</html>

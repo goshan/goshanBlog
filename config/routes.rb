@@ -40,9 +40,8 @@ GBlog::Application.routes.draw do
   
   resources :admins do
     collection do 
-      get "info_edit"
-      get "status_edit"
-      get "avatar_edit"
+      get "admin_show"
+      get "admin_edit"
       put "admin_update"
     end
   end

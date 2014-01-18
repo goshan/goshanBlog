@@ -78,7 +78,7 @@ a{
 	color: #266792;
 }
 
-#side_bar #about_me{
+#side_bar #about_me_link{
 	font-size: 15px;
 	margin: 10px 0;
 	text-align: center;
@@ -114,9 +114,16 @@ a{
 	overflow-y: auto;
 }
 
-/* tools_content */
+/* tools layout */
 #tools_content{
 	margin: 10px;
+}
+
+/* no_side layout */
+#info_content{
+	height: 495px;
+	border: 1px solid #21bbe1;
+	overflow-y: auto;
 }
 
 /* normal widget style*/

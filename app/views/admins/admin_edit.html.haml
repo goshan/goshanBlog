@@ -1,0 +1,48 @@
+.head1 
+	- if @type == "info"
+		= "修改资料"
+	- elsif @type == "avatar"
+		= "修改头像"
+	- elsif @type == "photo"
+		= "修改照片"
+	- elsif @type == "desc"
+		= "修改简介"
+	- elsif @type == "status"
+		= "修改状态"
+#admin_edit
+	= form_for @admin, :url => admin_update_admins_path, :html => {:multipart => (@type == "avatar" || @type == "photo")} do |f|
+		- if @type == "info"
+			%table
+				%tr
+					%td 昵称
+					%td= f.text_field :name
+				%tr
+					%td 生日
+					%td= f.text_field :birthday
+				%tr
+					%td 公司
+					%td= f.text_area :company, :class => "info_edit"
+				%tr
+					%td 职位
+					%td= f.text_field :title
+				%tr
+					%td QQ
+					%td= f.text_field :qq
+				%tr
+					%td 新浪微博
+					%td= f.text_area :weibo, :class => "info_edit"
+				%tr
+					%td 微信号
+					%td= f.text_field :wechat
+				%tr
+					%td 邮箱
+					%td= f.text_field :mail
+		- elsif @type == "avatar"
+			= f.file_field :avatar
+		- elsif @type == "photo"
+			= f.file_field :photo
+		- elsif @type == "desc"
+			= f.text_area :desc, :class => "text_input desc_edit"
+		- elsif @type == "status"
+			= f.text_area :status, :class => "text_input status_edit"
+		= submit_tag

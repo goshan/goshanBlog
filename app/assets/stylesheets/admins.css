@@ -5,19 +5,76 @@
 
 
 
-/* info_edit */
+/* admin_edit */
 #admin_edit input[type="text"]{
 	width: 150px;
 }
 
-#admin_edit textarea{
+#admin_edit .info_edit{
 	width: 150px;
 	height: 50px;
 	resize: none;
 }
 
-/* status_edit */
-#status_edit textarea{
+#admin_edit .status_edit{
 	width: 400px;
 	height: 100px;
+}
+
+#admin_edit .desc_edit{
+	width: 800px;
+	height: 500px;
+}
+
+/* admin_show */
+#about_me{
+	font-family: Monaco;
+	padding: 20px;
+	background-color: black;
+	position: relative;
+}
+
+#about_me .map{
+	font-size: 38px;
+	margin-bottom: 10px;
+}
+
+#about_me .sub_info{
+	margin: 0 0 10px 50px;
+}
+
+#about_me .cla{
+	color: #ffa07a;
+}
+
+#about_me .var{
+	color: #4876ff;
+}
+
+#about_me .str{
+	color: #00cd00;
+}
+
+#about_me .obj{
+	color: #8969cd;
+}
+
+#about_me .oth{
+	color: white;
+}
+
+#about_me .comment{
+	color: #c1c1c1;
+}
+
+#about_me_photo{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+}
+
+#about_me_photo img{
+	height: 250px;
+	width: 250px;
+	border: 10px solid white;
 }
