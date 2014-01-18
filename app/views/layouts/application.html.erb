@@ -20,6 +20,7 @@
 		<%= image_tag admin.avatar.url, :id => "avatar"%>
 		<div id="nick_name"><%= admin.name%></div>
 		<div id="info"><%= admin.company%></div>
+		<div id="about_me"><%= link_to "<关于我>", admin_path(1)%></div>
 		<div id="hot_types">
 			<div id="hot_types_head">
 				热门分类

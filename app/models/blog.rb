@@ -22,6 +22,10 @@ class Blog < ActiveRecord::Base
     self.text.gsub(/[\r\n]/, "<br>")
   end
   
+  def preview
+    self.text[0..100].gsub(/[\r\n]/, "<br>")
+  end
+  
   def read_once
     self.update_attributes(:read_cnt => self.read_cnt+1)
   end

@@ -23,10 +23,15 @@ ActiveRecord::Schema.define(:version => 20140116060259) do
     t.string   "wechat"
     t.string   "mail"
     t.string   "status"
+    t.string   "desc"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end

@@ -12,6 +12,7 @@ class CreateAdmins < ActiveRecord::Migration
       t.string :status
       t.string :desc
       t.attachment :avatar
+      t.attachment :photo
 
       t.timestamps
     end

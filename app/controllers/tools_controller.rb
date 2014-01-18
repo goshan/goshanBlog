@@ -26,7 +26,7 @@ class ToolsController < ApplicationController
   def create_blog_type
     @blog_type = BlogType.create!(params[:blog_type])
     
-    redirect_to show_blog_type_tools_path(:blog_type_id => @blog_type.id)
+    redirect_to blogs_path(:blog_type_id => @blog_type.id)
   end
   
 end

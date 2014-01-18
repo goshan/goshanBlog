@@ -68,10 +68,18 @@ a{
 #side_bar #nick_name{
 	font-size: 25px;
 	text-align: center;
+	color: #21bbe1;
 }
 
 #side_bar #info{
-	font-size: 18px;
+	font-size: 15px;
+	margin: 10px 0;
+	text-align: center;
+	color: #266792;
+}
+
+#side_bar #about_me{
+	font-size: 15px;
 	margin: 10px 0;
 	text-align: center;
 }
