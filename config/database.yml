@@ -1,7 +1,7 @@
 development:
     adapter: mysql2
     encoding: utf8
-    database: gBlog
+    database: gblog
     pool: 5
     username: goshan
     password: goshan
@@ -13,7 +13,7 @@ development:
 test:
     adapter: mysql2
     encoding: utf8
-    database: gBlog_test
+    database: gblog_test
     pool: 5
     username: goshan
     password: goshan
@@ -22,7 +22,7 @@ test:
 production:
     adapter: mysql2
     encoding: utf8
-    database: gBlog
+    database: gblog
     pool: 5
     username: goshan
     password: goshan
