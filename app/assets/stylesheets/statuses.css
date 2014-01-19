@@ -16,7 +16,7 @@
 }
 
 /* index */
-#statuses_feed td{
+#statuses_feed .status_content{
 	height: 30px;
-	width: 200px;
+	width: 700px;
 }

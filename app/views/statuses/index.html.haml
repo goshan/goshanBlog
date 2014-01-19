@@ -2,7 +2,7 @@
 %table#statuses_feed
 	- @statuses.each do |status|
 		%tr
-			%td= status.content
+			%td.status_content= status.content
 			%td= status.created_at.to_date
 			%td= link_to "修改", edit_status_path(status)
 .pagination= will_paginate @statuses
