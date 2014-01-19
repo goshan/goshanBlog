@@ -19,7 +19,7 @@ class Blog < ActiveRecord::Base
   end
   
   def preview
-    self.text[0..100]
+    self.text[0..200]
   end
   
   def read_once

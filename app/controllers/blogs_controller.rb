@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   
   def index
-    @blogs = Blog.where(:blog_type_id => params[:blog_type_id]).order("updated_at desc")
+    @blogs = Blog.where(:blog_type_id => params[:blog_type_id]).order("created_at desc")
   end
   
   def show
@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
   
   def home
-    @blogs = Blog.order("updated_at desc").limit(10)
+    @blogs = Blog.order("created_at desc").limit(10)
     
     render "index"
   end

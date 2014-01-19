@@ -1,0 +1,7 @@
+.head1 新建分类
+#edit_blog_type
+	= form_for @blog_type, :url => update_blog_type_tools_path(:blog_type_id => @blog_type.id) do |f|
+		= f.text_field :name, :class => "title_input"
+		= f.text_area :desc, :class => "text_input"
+		= f.submit "修改", :class => "confirm_button"
+		

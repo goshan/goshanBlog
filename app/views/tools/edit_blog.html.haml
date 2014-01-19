@@ -1,0 +1,8 @@
+.head1 修改博客
+#edit_blog
+	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id) do |f|
+		= f.text_field :title, :class => "title_input"
+		= f.text_area :text, :class => "text_input"
+		= f.select :blog_type_id, types_option
+		= f.submit "修改", :class => "confirm_button"
+		

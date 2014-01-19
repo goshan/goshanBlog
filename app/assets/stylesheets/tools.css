@@ -10,16 +10,27 @@
 	margin-bottom: 20px;
 }
 
-#tools_page #tools_function{
+#tools_page #admin_function{
 	display: inline-block;
 	padding: 5px;
 	border: 1px solid;
+	margin-bottom: 30px;
 }
 
 #tools_page .current_stat{
 	display: inline-block;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	vertical-align: top;
 	padding: 5px;
 	border: 1px solid;
+	margin-right: 20px;
+}
+
+#tools_page .stat_name{
+	color: #21bbe1;
+	font-size: 23px;
 }
 
 /* new_blog_type */
@@ -37,6 +48,27 @@
 	margin-bottom: 10px;
 }
 
+/* list_blog_types */
+#list_blog_types td{
+	height: 30px;
+	width: 200px;
+}
+
+/* edit_blog_type */
+#edit_blog_type .title_input{
+	display: block;
+	height: 30px;
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+#edit_blog_type .text_input{
+	display: block;
+	height: 100px;
+	width: 500px;
+	margin-bottom: 10px;
+}
+
 /* new_blog */
 #new_blog .title_input{
 	display: block;
@@ -45,6 +77,26 @@
 }
 
 #new_blog .text_input{
+	display: block;
+	height: 300px;
+	width: 500px;
+	margin: 20px 0;
+}
+
+/* list_blogs */
+#list_blogs td{
+	height: 30px;
+	width: 200px;
+}
+
+/* edit_blogs */
+#edit_blog .title_input{
+	display: block;
+	width: 500px;
+	margin: 20px 0;
+}
+
+#edit_blog .text_input{
 	display: block;
 	height: 300px;
 	width: 500px;

@@ -61,6 +61,8 @@
 }
 
 #blog_detail #blog_content{
+	font-size: 15px;
+	line-height: 23px;
 	margin: 30px 0;
 }
 
