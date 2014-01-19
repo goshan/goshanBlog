@@ -51,6 +51,8 @@ GBlog::Application.routes.draw do
       put "admin_update"
     end
   end
+  
+  resources :statuses
 
   # Sample resource route with sub-resources:
   #   resources :products do

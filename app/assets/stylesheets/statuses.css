@@ -1,0 +1,22 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/* new */
+#new_status textarea{
+	width: 400px;
+	height: 100px;
+}
+
+/* edit */
+#edit_status textarea{
+	width: 400px;
+	height: 100px;
+}
+
+/* index */
+#statuses_feed td{
+	height: 30px;
+	width: 200px;
+}

@@ -7,8 +7,6 @@
 		= "修改照片"
 	- elsif @type == "desc"
 		= "修改简介"
-	- elsif @type == "status"
-		= "修改状态"
 #admin_edit
 	= form_for @admin, :url => admin_update_admins_path, :html => {:multipart => (@type == "avatar" || @type == "photo")} do |f|
 		- if @type == "info"
@@ -46,6 +44,4 @@
 			= f.file_field :photo
 		- elsif @type == "desc"
 			= f.text_area :desc, :class => "text_input desc_edit"
-		- elsif @type == "status"
-			= f.text_area :status, :class => "text_input status_edit"
 		= submit_tag

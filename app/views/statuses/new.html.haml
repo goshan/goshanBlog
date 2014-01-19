@@ -1,0 +1,5 @@
+.head1 编辑状态
+#new_status
+	= form_for @status do |f|
+		= f.text_area :content, :class => "text_input"
+		= f.submit

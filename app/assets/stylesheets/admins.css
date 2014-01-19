@@ -16,11 +16,6 @@
 	resize: none;
 }
 
-#admin_edit .status_edit{
-	width: 400px;
-	height: 100px;
-}
-
 #admin_edit .desc_edit{
 	width: 800px;
 	height: 500px;

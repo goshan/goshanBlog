@@ -5,6 +5,11 @@ class Admin < ActiveRecord::Base
   has_attached_file :avatar, :path => ":rails_root/public/avatar/:filename", :url => "/avatar/:filename"
   has_attached_file :photo, :path => ":rails_root/public/photo/:filename", :url => "/photo/:filename"
   
+  def status
+    status = Status.order("created_at desc").first
+    status ? status.content : ""
+  end
+  
   def print_desc
     "/ #{self.desc.gsub("\r\n", "\r\n/ ")}"
   end

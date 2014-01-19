@@ -2,9 +2,15 @@
 	.head1 后台工具
 	#return= link_to "<< 正常模式", root_path
 	#admin_function
-		- functions.each do |func|
+		- admin_funcs.each do |func|
 			.func_item= link_to func[0], func[1]
 	#stat_show
+		.current_stat
+			%div.stat_name Statuses
+			%div= @statuses[0]
+			%div= @statuses[1]
+			%div= link_to "查看", statuses_path
+			%div= link_to "编辑", new_status_path
 		.current_stat
 			%div.stat_name Blogs
 			%div= @blogs[0]

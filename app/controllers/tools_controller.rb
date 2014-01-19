@@ -7,6 +7,7 @@ class ToolsController < ApplicationController
   layout "tools"
   
   def index
+    @statuses = [Status.all.count, Status.where("created_at > ?", Time.now.beginning_of_day).count]
     @blogs = [Blog.all.count, Blog.where("created_at > ?", Time.now.beginning_of_day).count]
     @blog_types = [BlogType.all.count, BlogType.where("created_at > ?", Time.now.beginning_of_day).count]
   end
