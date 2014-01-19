@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 class Blog < ActiveRecord::Base
+  before_save :check_count_changed
+  
   attr_accessible :title, :blog_type_id, :text, :read_cnt
   
   belongs_to :blog_type, :counter_cache => :blogs_count
@@ -35,5 +37,13 @@ class Blog < ActiveRecord::Base
   def read_once
     self.update_attributes(:read_cnt => self.read_cnt+1)
   end
+  
+  private
+    def check_count_changed
+      if self.blog_type_id_changed?
+        BlogType.find_by_id(self.blog_type_id_change[0]).decrement!(:blogs_count) #decrement previously assigned Post's counter_cache
+        BlogType.find_by_id(self.blog_type_id_change[1]).increment!(:blogs_count) #increment newly assigned Post's counter_cache
+      end
+    end
   
 end
