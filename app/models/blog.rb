@@ -41,8 +41,8 @@ class Blog < ActiveRecord::Base
   private
     def check_count_changed
       if self.blog_type_id_changed?
-        BlogType.find_by_id(self.blog_type_id_change[0]).decrement!(:blogs_count) #decrement previously assigned Post's counter_cache
-        BlogType.find_by_id(self.blog_type_id_change[1]).increment!(:blogs_count) #increment newly assigned Post's counter_cache
+        BlogType.decrement_counter(:blogs_count, self.blog_type_id_change[0]) #decrement previously assigned Post's counter_cache
+        BlogType.increment_counter(:blogs_count, self.blog_type_id_change[1]) #increment newly assigned Post's counter_cache
       end
     end
   
