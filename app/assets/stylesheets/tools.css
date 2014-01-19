@@ -90,6 +90,23 @@
 }
 
 /* edit_blogs */
+#edit_blog #blog_images{
+	margin-bottom: 20px;
+}
+
+#edit_blog #blog_images .image{
+	float: left;
+	margin-right: 20px;
+}
+
+#edit_blog #blog_images .image:last-child{
+	float: none;
+}
+
+#edit_blog #blog_images .image img{
+	height: 100px;
+}
+
 #edit_blog .title_input{
 	display: block;
 	width: 500px;

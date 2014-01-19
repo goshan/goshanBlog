@@ -1,6 +1,14 @@
 .head1 修改博客
 #edit_blog
-	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id) do |f|
+	#blog_images
+		- @blog.images.each do |image|
+			.image
+				= image_tag image.img.url
+				%br
+				= "image_id: #{image.id}"
+	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id), :html => {:multipart => true} do |f|
+		= f.file_field :image
+		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"
 		= f.select :blog_type_id, types_option

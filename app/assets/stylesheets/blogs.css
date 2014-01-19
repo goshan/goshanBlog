@@ -66,6 +66,10 @@
 	margin: 30px 0;
 }
 
+#blog_detail #blog_content .blog_image{
+	max-height: 300px;
+}
+
 #blog_detail #oth_info{
 	float: right;
 	margin-right: 50px;

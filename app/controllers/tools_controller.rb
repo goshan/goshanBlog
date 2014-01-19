@@ -17,9 +17,23 @@ class ToolsController < ApplicationController
   end
   
   def create_blog
+    # 1. get image and blog content
+    img = params[:blog][:image]
+    params[:blog].delete(:image)
+    # 2. save blog no matter image or submit
     @blog = Blog.create!(params[:blog])
     
-    redirect_to blog_path(@blog)
+    if params[:commit] == "upload"
+      # 3. when upload save image if thereis
+      if img
+        @image = Image.create!(:img => img, :blog_id => @blog.id)
+      end
+      
+      redirect_to edit_blog_tools_path(:blog_id => @blog.id)
+    else
+      # 4. or ignore image
+      redirect_to blog_path(@blog)
+    end
   end
   
   def list_blogs
@@ -35,12 +49,27 @@ class ToolsController < ApplicationController
   end
   
   def update_blog
+    # 1. get image and blog
+    img = params[:blog][:image]
+    params[:blog].delete(:image)
+    # 2. save blog no matter image or submit 
     @blog = Blog.find_by_id(params[:blog_id])
     if @blog
       @blog.update_attributes!(params[:blog])
-      redirect_to blog_path(@blog)
     else
       render :text => "未知blog_id"
+    end
+    
+    if params[:commit] == "upload"
+      # 3. when upload save image if there is
+      if img
+        @image = Image.create!(:img => img, :blog_id => @blog.id)
+      end
+      
+      redirect_to edit_blog_tools_path(:blog_id => @blog.id)
+    else 
+      # 4. or ignore image and submit
+      redirect_to blog_path(@blog)
     end
   end
   

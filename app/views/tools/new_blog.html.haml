@@ -1,6 +1,8 @@
 .head1 新建博客
 #new_blog
-	= form_for @blog, :url => create_blog_tools_path do |f|
+	= form_for @blog, :url => create_blog_tools_path, :html => {:multipart => true} do |f|
+		= f.file_field :image
+		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"
 		= f.select :blog_type_id, types_option

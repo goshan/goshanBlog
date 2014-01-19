@@ -17,5 +17,6 @@
 .DS_store
 /public/avatar/
 /public/photo/
+/public/images/
 /db/schema.rb
 Gemfile.lock
