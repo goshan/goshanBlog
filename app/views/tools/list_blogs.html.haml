@@ -2,11 +2,13 @@
 	.head1 博客列表
 	%tr
 		%td 博客名称
+		%td 分类
 		%td 创建日期
 		%td 操作
 	- @blogs.each do |blog|
 		%tr
 			%td= link_to blog.title, blog
+			%td= blog.type_name
 			%td= blog.created_at.to_date
 			%td= link_to "修改", edit_blog_tools_path(:blog_id => blog.id)
 .pagination= will_paginate @blogs
