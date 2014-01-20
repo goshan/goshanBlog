@@ -13,6 +13,7 @@
 				%br
 				= "music_id: #{music.id}"
 	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id), :html => {:multipart => true} do |f|
+		#link_add= link_to "添加链接", "#"
 		.image_upload
 			上传图片
 			= f.file_field :image

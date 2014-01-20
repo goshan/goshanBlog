@@ -70,6 +70,17 @@
 }
 
 /* new_blog */
+#new_blog #link_add{
+	display: inline-block;
+	border: 1px solid #21bbe1;
+	padding: 5px;
+	margin: 5px;
+}
+
+#new_blog #link_add a{
+	color: #21bbe1;
+}
+
 #new_blog .title_input{
 	display: block;
 	width: 500px;
@@ -90,6 +101,17 @@
 }
 
 /* edit_blogs */
+#edit_blog #link_add{
+	display: inline-block;
+	border: 1px solid #21bbe1;
+	padding: 5px;
+	margin: 5px;
+}
+
+#edit_blog #link_add a{
+	color: #21bbe1;
+}
+
 #edit_blog #blog_images{
 	margin-bottom: 20px;
 }

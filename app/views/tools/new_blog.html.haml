@@ -1,6 +1,7 @@
 .head1 新建博客
 #new_blog
 	= form_for @blog, :url => create_blog_tools_path, :html => {:multipart => true} do |f|
+		#link_add= link_to "添加链接", "#"
 		.image_upload
 			上传图片
 			= f.file_field :image
