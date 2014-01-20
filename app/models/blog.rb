@@ -44,7 +44,7 @@ class Blog < ActiveRecord::Base
   end
   
   def preview
-    self.text.gsub(/<gImage id=[0-9]*>/, "[图片]")[0..200]
+    self.text.gsub(/<gImage id=[0-9]*>/, "[图片]").gsub(/<gMusic id=[0-9]*>/, "[音乐]")[0..200]
   end
   
   def read_once
