@@ -8,6 +8,8 @@ class Blog < ActiveRecord::Base
   belongs_to :blog_type, :counter_cache => :blogs_count
   
   has_many :images, :dependent => :destroy
+  
+  has_many :musics, :dependent => :destroy
 
   def type_name
     blog_type = BlogType.all
@@ -22,12 +24,23 @@ class Blog < ActiveRecord::Base
     self.updated_at.strftime("%Y-%m-%d %H:%M")
   end
   
-  def content_with_images
+  def content_with_media
     imgs = {}
     self.images.each do |image|
       imgs[image.id.to_s.to_sym] = image.img.url
     end
-    self.text.gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[0].to_sym]}'/>"}.html_safe
+    sounds = {}
+    self.musics.each do |music|
+      sounds[music.id.to_s.to_sym] = music.sound.url
+    end
+    self.text
+    .gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[0].to_sym]}'/>"}
+    .gsub(/<gMusic id=[0-9]*>/) {|s| "<audio controls><source src='#{sounds[s.match(/([0-9]+)/)[0].to_sym]}'>'Your browser does not support the audio element.'</audio>"}
+    .html_safe
+    
+    # %audio{:controls => true}
+    #       %source{:src => "/test.mp3", :type => "audio/mp3"}
+    #       Your browser does not support the audio element.
   end
   
   def preview

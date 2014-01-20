@@ -19,7 +19,9 @@ class ToolsController < ApplicationController
   def create_blog
     # 1. get image and blog content
     img = params[:blog][:image]
+    mus = params[:blog][:music]
     params[:blog].delete(:image)
+    params[:blog].delete(:music)
     # 2. save blog no matter image or submit
     @blog = Blog.create!(params[:blog])
     
@@ -27,6 +29,9 @@ class ToolsController < ApplicationController
       # 3. when upload save image if thereis
       if img
         @image = Image.create!(:img => img, :blog_id => @blog.id)
+      end
+      if mus
+        @music = Music.create!(:sound => mus, :blog_id => @blog.id)
       end
       
       redirect_to edit_blog_tools_path(:blog_id => @blog.id)
@@ -51,7 +56,9 @@ class ToolsController < ApplicationController
   def update_blog
     # 1. get image and blog
     img = params[:blog][:image]
+    mus = params[:blog][:music]
     params[:blog].delete(:image)
+    params[:blog].delete(:music)
     # 2. save blog no matter image or submit 
     @blog = Blog.find_by_id(params[:blog_id])
     if @blog
@@ -64,6 +71,9 @@ class ToolsController < ApplicationController
       # 3. when upload save image if there is
       if img
         @image = Image.create!(:img => img, :blog_id => @blog.id)
+      end
+      if mus
+        @music = Music.create!(:sound => mus, :blog_id => @blog.id)
       end
       
       redirect_to edit_blog_tools_path(:blog_id => @blog.id)

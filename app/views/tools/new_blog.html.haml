@@ -1,7 +1,12 @@
 .head1 新建博客
 #new_blog
 	= form_for @blog, :url => create_blog_tools_path, :html => {:multipart => true} do |f|
-		= f.file_field :image
+		.image_upload
+			上传图片
+			= f.file_field :image
+		.music_upload
+			上传音乐
+			= f.file_field :music
 		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"

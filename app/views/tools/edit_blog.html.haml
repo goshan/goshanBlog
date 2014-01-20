@@ -6,8 +6,19 @@
 				= image_tag image.img.url
 				%br
 				= "image_id: #{image.id}"
+	#blog_musics
+		- @blog.musics.each do |music|
+			.music
+				= "music_name: #{music.sound_file_name}"
+				%br
+				= "music_id: #{music.id}"
 	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id), :html => {:multipart => true} do |f|
-		= f.file_field :image
+		.image_upload
+			上传图片
+			= f.file_field :image
+		.music_upload
+			上传音乐
+			= f.file_field :music
 		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"

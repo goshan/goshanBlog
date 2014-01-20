@@ -107,6 +107,19 @@
 	height: 100px;
 }
 
+#edit_blog #blog_musics{
+	margin-bottom: 20px;
+}
+
+#edit_blog #blog_musics .music{
+	float: left;
+	margin-right: 20px;
+}
+
+#edit_blog #blog_musics .music:last-child{
+	float: none;
+}
+
 #edit_blog .title_input{
 	display: block;
 	width: 500px;
