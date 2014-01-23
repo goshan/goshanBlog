@@ -36,18 +36,16 @@ class Blog < ActiveRecord::Base
     self.text
     .gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[1].to_sym]}'/>"}
     .gsub(/<gMusic id=[0-9]*>/) {|s| "<audio controls><source src='#{sounds[s.match(/([0-9]+)/)[1].to_sym]}'>'Your browser does not support the audio element.'</audio>"}
+    .gsub(/<gCode content=/, "<pre class='code'>").gsub(/\/>/, "</pre>")
     .html_safe
-    
-    # %audio{:controls => true}
-    #       %source{:src => "/test.mp3", :type => "audio/mp3"}
-    #       Your browser does not support the audio element.
   end
   
   def preview
     self.text
     .gsub(/<gImage id=[0-9]*>/, "[图片]")
     .gsub(/<gMusic id=[0-9]*>/, "[音乐]")
-    .gsub(/<a class='gLink' href='.*' target='blank'>.*<\/a>/){|s| "[链接: #{s.match(/<a class='gLink' href='.*' target='blank'>(.*)<\/a>/)[1]}]"}[0..200]
+    .gsub(/<a class='gLink' href='.*' target='blank'>.*<\/a>/){|s| "[链接: #{s.match(/<a class='gLink' href='.*' target='blank'>(.*)<\/a>/)[1]}]"}
+    .gsub(/<gCode content=/, "").gsub(/\/>/, "")[0..200]
   end
   
   def read_once

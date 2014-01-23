@@ -23,7 +23,7 @@
 
 /* admin_show */
 #about_me{
-	font-family: Monaco;
+	font-family: monospace;
 	padding: 20px;
 	background-color: black;
 	position: relative;
@@ -36,18 +36,19 @@
 
 #about_me .sub_info{
 	margin: 0 0 10px 50px;
+	font-size: 16px;
 }
 
 #about_me .cla{
-	color: #ffa07a;
+	color: #E28964;
 }
 
 #about_me .var{
-	color: #4876ff;
+	color: #3387CC;
 }
 
 #about_me .str{
-	color: #00cd00;
+	color: #65B042;
 }
 
 #about_me .obj{
@@ -59,7 +60,7 @@
 }
 
 #about_me .comment{
-	color: #c1c1c1;
+	color: #aeaeae;
 }
 
 #about_me_photo{
