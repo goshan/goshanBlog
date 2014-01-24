@@ -36,11 +36,13 @@ GBlog::Application.routes.draw do
       get "list_blogs"
       get "edit_blog"
       put "update_blog"
+      get "delete_blog"
       get "new_blog_type"
       post "create_blog_type"
       get "list_blog_types"
       get "edit_blog_type"
       put "update_blog_type"
+      get "delete_blog_type"
     end
   end
   

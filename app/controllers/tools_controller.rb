@@ -82,6 +82,16 @@ class ToolsController < ApplicationController
       redirect_to blog_path(@blog)
     end
   end
+
+  def delete_blog
+    @blog = Blog.find_by_id(params[:blog_id])
+    if @blog
+      @blog.destroy
+      redirect_to list_blogs_tools_path
+    else 
+      render :text => "未知blog_id"
+    end
+  end
   
   def new_blog_type
     @blog_type = BlogType.new
@@ -110,7 +120,20 @@ class ToolsController < ApplicationController
     @blog_type = BlogType.find_by_id(params[:blog_type_id])
     if @blog_type
       @blog_type.update_attributes!(params[:blog_type])
-      redirect_to blogs_path(:blog_type_id => @blog_type.id)
+      redirect_to blog_types_path
+    else
+      render :text => "未知blog_type_id"
+    end
+  end
+
+  def delete_blog_type
+    @blog_type = BlogType.find_by_id(params[:blog_type_id])
+    if @blog_type
+      Blog.where(:blog_type_id => @blog_type.id).each do |blog|
+        blog.update_attributes!(:blog_type_id => 0)
+      end
+      @blog_type.destroy
+      redirect_to list_blog_types_tools_path
     else
       render :text => "未知blog_type_id"
     end

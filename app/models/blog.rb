@@ -16,7 +16,7 @@ class Blog < ActiveRecord::Base
     if self.blog_type_id == 0
       "默认分类"
     else
-      blog_type[self.blog_type_id-1].name
+      BlogType.find_by_id(self.blog_type_id).name
     end
   end
   

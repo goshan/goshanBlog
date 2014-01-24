@@ -7,7 +7,7 @@
 		%td 操作
 	%tr
 		%td= link_to "默认分类", blogs_path(:blog_type_id => 0)
-		%td 1988-12-08
+		%td ----
 		%td= @default_blogs.count
 		
 	- @blog_types.each do |type|
@@ -15,5 +15,7 @@
 			%td= link_to type.name, blogs_path(:blog_type_id => type.id)
 			%td= type.created_at.to_date
 			%td= type.blogs_count
-			%td= link_to "修改", edit_blog_type_tools_path(:blog_type_id => type.id)
+			%td
+				= link_to "修改", edit_blog_type_tools_path(:blog_type_id => type.id)
+				= link_to "删除", delete_blog_type_tools_path(:blog_type_id => type.id)
 .pagination= will_paginate @blog_types

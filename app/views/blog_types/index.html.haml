@@ -7,7 +7,7 @@
 			%td 文章数
 		%tr
 			%td= link_to "默认分类", blogs_path(:blog_type_id => 0)
-			%td 1988-12-08
+			%td ----
 			%td= @default_blogs.count  
 		- @blog_types.each do |type|
 			%tr.type_info
