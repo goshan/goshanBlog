@@ -13,7 +13,7 @@
 
 #create_comment
 	= hidden_field_tag :blog_id, @blog.id
-	= text_field_tag :name, "#{@visitor && !@visitor.name.empty? ? @visitor.name : ''}", :placeholder => "留下您的大名吧！嘛，不留就算了", :class => "title_input"
+	= text_field_tag :name, "#{@visitor && @visitor.name && !@visitor.name.empty? ? @visitor.name : ''}", :placeholder => "留下您的大名吧！嘛，不留就算了", :class => "title_input"
 	= text_area_tag :comment_content, "", :placeholder => "说点什么吧...", :class => "text_input"
 	= link_to "留言", comments_path, :id => "submit_comment", :class => "link_button"
 
