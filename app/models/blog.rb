@@ -6,6 +6,8 @@ class Blog < ActiveRecord::Base
   attr_accessible :title, :blog_type_id, :text, :read_cnt
   
   belongs_to :blog_type, :counter_cache => :blogs_count
+
+  has_many :comments, :dependent => :destroy, :order => "updated_at desc"
   
   has_many :images, :dependent => :destroy
   
@@ -13,10 +15,10 @@ class Blog < ActiveRecord::Base
 
   def type_name
     blog_type = BlogType.all
-    if self.blog_type_id == 0
-      "默认分类"
+    if self.blog_type
+      self.blog_type.name
     else
-      BlogType.find_by_id(self.blog_type_id).name
+      "默认分类"
     end
   end
   

@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
   end
   
   def show
+    @visitor = Visitor.find_by_ip(request.remote_ip)
     @blog = Blog.find_by_id(params[:id])
     @blog.read_once
   end

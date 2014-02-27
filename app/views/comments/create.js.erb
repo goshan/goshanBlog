@@ -1,0 +1,2 @@
+$(".comment:first").before("<div class='comment' style='display:none'><div class='comment_header'><div class='visitor_name'><%= @comment.visitor.display_name%></div><div class='comment_time'><%= @comment.time_str%></div></div><div class='comment_text'><%= @comment.content%></div></div>");
+$(".comment:first").fadeIn();

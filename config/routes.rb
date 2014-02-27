@@ -28,6 +28,8 @@ GBlog::Application.routes.draw do
   resources :blogs
   
   resources :blog_types
+
+  resources :comments
   
   resources :tools do 
     collection do 

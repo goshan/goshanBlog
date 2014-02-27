@@ -18,4 +18,5 @@
 $(document).ready(function(){
 	on_add_link();
 	highlight_code();
+	make_comment();
 });
