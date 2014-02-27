@@ -45,6 +45,8 @@ GBlog::Application.routes.draw do
       get "edit_blog_type"
       put "update_blog_type"
       get "delete_blog_type"
+      get "list_comments"
+      get "delete_comment"
     end
   end
   

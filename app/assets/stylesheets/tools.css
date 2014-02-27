@@ -154,3 +154,13 @@
 	width: 500px;
 	margin: 20px 0;
 }
+
+/* list_comments */
+#list_comments tr{
+	height: 50px;
+}
+
+#list_comments td{
+	max-width: 700px;
+	word-wrap: break-word;
+}

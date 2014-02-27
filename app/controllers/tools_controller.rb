@@ -10,6 +10,7 @@ class ToolsController < ApplicationController
     @statuses = [Status.all.count, Status.where("created_at > ?", Time.now.beginning_of_day).count]
     @blogs = [Blog.all.count, Blog.where("created_at > ?", Time.now.beginning_of_day).count]
     @blog_types = [BlogType.all.count, BlogType.where("created_at > ?", Time.now.beginning_of_day).count]
+    @comments = [Comment.all.count, Comment.where("created_at > ?", Time.now.beginning_of_day).count]
   end
   
   def new_blog
@@ -138,5 +139,20 @@ class ToolsController < ApplicationController
       render :text => "未知blog_type_id"
     end
   end
+
+  def list_comments
+    page = params[:page] || 1
+    @comments = Comment.order("updated_at desc").paginate(:page => page, :per_page => 20)
+  end
   
+  def delete_comment
+    @comment = Comment.find_by_id(params[:comment_id])
+    if @comment
+      @comment.destroy
+      redirect_to list_comments_tools_path
+    else
+      render :text => "未知comment_id"
+    end
+  end
+
 end

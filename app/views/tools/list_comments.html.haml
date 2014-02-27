@@ -1,0 +1,16 @@
+%table#list_comments
+	.head1 留言列表
+	%tr
+		%td 访问者
+		%td 日期
+		%td 内容
+		%td 博客原文
+		%td 操作
+	- @comments.each do |comment|
+		%tr
+			%td= comment.visitor.display_name
+			%td= comment.time_str
+			%td= comment.content
+			%td= link_to "博客原文", blog_path(comment.blog)
+			%td= link_to "删除", delete_comment_tools_path(:comment_id => comment.id)
+.pagination= will_paginate @comments
