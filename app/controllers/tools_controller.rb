@@ -11,6 +11,7 @@ class ToolsController < ApplicationController
     @blogs = [Blog.all.count, Blog.where("created_at > ?", Time.now.beginning_of_day).count]
     @blog_types = [BlogType.all.count, BlogType.where("created_at > ?", Time.now.beginning_of_day).count]
     @comments = [Comment.all.count, Comment.where("created_at > ?", Time.now.beginning_of_day).count]
+    @visitors = [Visitor.all.count, Visitor.where("last_access > ?", Time.now.beginning_of_day).count]
   end
   
   def new_blog
@@ -153,6 +154,11 @@ class ToolsController < ApplicationController
     else
       render :text => "未知comment_id"
     end
+  end
+
+  def list_visitors
+    page = params[:page] || 1
+    @visitors = Visitor.order("last_access desc").paginate(:page => page, :per_page => 20)
   end
 
 end

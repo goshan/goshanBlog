@@ -28,3 +28,8 @@
 			%div= @comments[0]
 			%div= @comments[1]
 			%div= link_to "查看", list_comments_tools_path
+		.current_stat
+			%div.stat_name Visitors
+			%div= @visitors[0]
+			%div= @visitors[1]
+			%div= link_to "查看", list_visitors_tools_path

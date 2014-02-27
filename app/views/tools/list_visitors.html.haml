@@ -1,0 +1,14 @@
+%table#list_blogs
+	.head1 访问者列表
+	%tr
+		%td 昵称
+		%td IP
+		%td 访问次数
+		%td 最后访问
+	- @visitors.each do |visitor|
+		%tr
+			%td= visitor.name
+			%td= visitor.ip
+			%td= visitor.count
+			%td= visitor.last_access
+.pagination= will_paginate @visitors

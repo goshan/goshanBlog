@@ -47,6 +47,7 @@ GBlog::Application.routes.draw do
       get "delete_blog_type"
       get "list_comments"
       get "delete_comment"
+      get "list_visitors"
     end
   end
   
