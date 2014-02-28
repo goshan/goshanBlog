@@ -44,7 +44,7 @@ class Blog < ActiveRecord::Base
       attachs_name[attach.id.to_s.to_sym] = attach.file_file_name
     end
     self.text
-    .gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[1].to_sym]}'/>"}
+    .gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[1].to_sym]}'>"}
     .gsub(/<gMusic id=[0-9]*>/) {|s| "<audio controls><source src='#{sounds[s.match(/([0-9]+)/)[1].to_sym]}'>'Your browser does not support the audio element.'</audio>"}
     .gsub(/<gFile id=[0-9]*>/) {|s| "<a class='blog_attach' href='#{attachs[s.match(/([0-9]+)/)[1].to_sym]}'>#{attachs_name[s.match(/([0-9]+)/)[1].to_sym]}</a>"}
     .gsub(/<gCode content=/, "<pre class='code'>").gsub(/\/>/, "</pre>")
