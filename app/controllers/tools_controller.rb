@@ -22,8 +22,10 @@ class ToolsController < ApplicationController
     # 1. get image and blog content
     img = params[:blog][:image]
     mus = params[:blog][:music]
+    att = params[:blog][:attach]
     params[:blog].delete(:image)
     params[:blog].delete(:music)
+    params[:blog].delete(:attach)
     # 2. save blog no matter image or submit
     @blog = Blog.create!(params[:blog])
     
@@ -34,6 +36,9 @@ class ToolsController < ApplicationController
       end
       if mus
         @music = Music.create!(:sound => mus, :blog_id => @blog.id)
+      end
+      if att
+        @attach = Attachment.create!(:file => att, :blog_id => @blog.id)
       end
       
       redirect_to edit_blog_tools_path(:blog_id => @blog.id)

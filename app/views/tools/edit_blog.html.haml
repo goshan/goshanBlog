@@ -12,6 +12,12 @@
 				= "music_name: #{music.sound_file_name}"
 				%br
 				= "music_id: #{music.id}"
+	#blog_attachs
+		- @blog.attachments.each do |attach|
+			.attach
+				= "file_name: #{attach.file_file_name}"
+				%br
+				= "file_id: #{attach.id}"
 	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id), :html => {:multipart => true} do |f|
 		#link_add= link_to "添加链接", "#"
 		.image_upload
@@ -20,6 +26,9 @@
 		.music_upload
 			上传音乐
 			= f.file_field :music
+		.attachment_upload
+			上传附件
+			= f.file_field :attach
 		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"

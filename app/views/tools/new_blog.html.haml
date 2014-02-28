@@ -8,6 +8,9 @@
 		.music_upload
 			上传音乐
 			= f.file_field :music
+		.attachment_upload
+			上传附件
+			= f.file_field :attach
 		= f.submit "upload"
 		= f.text_field :title, :class => "title_input"
 		= f.text_area :text, :class => "text_input"

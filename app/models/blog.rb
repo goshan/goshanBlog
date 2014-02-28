@@ -13,6 +13,8 @@ class Blog < ActiveRecord::Base
   
   has_many :musics, :dependent => :destroy
 
+  has_many :attachments, :dependent => :destroy
+
   def type_name
     blog_type = BlogType.all
     if self.blog_type
@@ -35,9 +37,16 @@ class Blog < ActiveRecord::Base
     self.musics.each do |music|
       sounds[music.id.to_s.to_sym] = music.sound.url
     end
+    attachs = {}
+    attachs_name = {}
+    self.attachments.each do |attach|
+      attachs[attach.id.to_s.to_sym] = attach.file.url
+      attachs_name[attach.id.to_s.to_sym] = attach.file_file_name
+    end
     self.text
     .gsub(/<gImage id=[0-9]*>/) {|s| "<img class='blog_image' src='#{imgs[s.match(/([0-9]+)/)[1].to_sym]}'/>"}
     .gsub(/<gMusic id=[0-9]*>/) {|s| "<audio controls><source src='#{sounds[s.match(/([0-9]+)/)[1].to_sym]}'>'Your browser does not support the audio element.'</audio>"}
+    .gsub(/<gFile id=[0-9]*>/) {|s| "<a class='blog_attach' href='#{attachs[s.match(/([0-9]+)/)[1].to_sym]}'>#{attachs_name[s.match(/([0-9]+)/)[1].to_sym]}</a>"}
     .gsub(/<gCode content=/, "<pre class='code'>").gsub(/\/>/, "</pre>")
     .html_safe
   end
@@ -46,7 +55,8 @@ class Blog < ActiveRecord::Base
     self.text
     .gsub(/<gImage id=[0-9]*>/, "[图片]")
     .gsub(/<gMusic id=[0-9]*>/, "[音乐]")
-    .gsub(/<a class='gLink' href='.*' target='blank'>.*<\/a>/){|s| "[链接: #{s.match(/<a class='gLink' href='.*' target='blank'>(.*)<\/a>/)[1]}]"}
+    .gsub(/<gFile id=[0-9]*>/, "[附件]")
+    .gsub(/<a class='gLink' href='.*' target='blank'>.*<\/a>/, "[链接]")
     .gsub(/<gCode content=/, "").gsub(/\/>/, "")[0..200]
   end
   
