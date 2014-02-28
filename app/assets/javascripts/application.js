@@ -16,7 +16,7 @@
 
 
 $(document).ready(function(){
-	on_add_link();
+	on_add_multimedia();
 	highlight_code();
 	make_comment();
 });

@@ -3,23 +3,20 @@
 	#blog_images
 		- @blog.images.each do |image|
 			.image
-				= image_tag image.img.url
+				= image_link image.img.url, "#", {}, {:image_id => image.id}
 				%br
 				= "image_id: #{image.id}"
 	#blog_musics
 		- @blog.musics.each do |music|
 			.music
-				= "music_name: #{music.sound_file_name}"
-				%br
-				= "music_id: #{music.id}"
+				= link_to "#{music.id}: #{music.sound_file_name}", "#", :music_id => music.id
 	#blog_attachs
 		- @blog.attachments.each do |attach|
 			.attach
-				= "file_name: #{attach.file_file_name}"
-				%br
-				= "file_id: #{attach.id}"
+				= link_to "#{attach.id}: #{attach.file_file_name}", "#", :attach_id => attach.id
+	.trans_add= link_to "添加链接", "#", :id => "link_add"
+	.trans_add= link_to "添加代码", "#", :id => "code_add"
 	= form_for @blog, :url => update_blog_tools_path(:blog_id => @blog.id), :html => {:multipart => true} do |f|
-		#link_add= link_to "添加链接", "#"
 		.image_upload
 			上传图片
 			= f.file_field :image
