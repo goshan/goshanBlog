@@ -1,14 +1,17 @@
 %table#list_blogs
 	.head1 访问者列表
+	#update_location= link_to "更新地址", update_ip_location_tools_path
 	%tr
 		%td 昵称
 		%td IP
+		%td 地址
 		%td 访问次数
 		%td 最后访问
 	- @visitors.each do |visitor|
 		%tr
 			%td= visitor.name
 			%td= visitor.ip
+			%td= visitor.location
 			%td= visitor.count
 			%td= visitor.last_access
 .pagination= will_paginate @visitors

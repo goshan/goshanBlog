@@ -18,6 +18,9 @@ gem 'json'
 gem 'paperclip'
 gem 'uglifier'
 
+gem 'geoip'
+
+
 group :development do
  	gem "haml-rails"
 end

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 class ToolsController < ApplicationController
-  
+
   before_filter :auth
   
   layout "tools"
@@ -164,6 +164,14 @@ class ToolsController < ApplicationController
   def list_visitors
     page = params[:page] || 1
     @visitors = Visitor.order("last_access desc").paginate(:page => page, :per_page => 20)
+  end
+
+  def update_ip_location
+    @visitors = Visitor.all#.where("location is NULL")
+    @visitors.each do |visitor|
+      visitor.find_location
+    end
+    redirect_to list_visitors_tools_path
   end
 
 end

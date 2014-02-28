@@ -48,6 +48,7 @@ GBlog::Application.routes.draw do
       get "list_comments"
       get "delete_comment"
       get "list_visitors"
+      get "update_ip_location"
     end
   end
   
