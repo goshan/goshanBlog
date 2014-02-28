@@ -13,7 +13,7 @@ class Visitor < ActiveRecord::Base
   def find_location
   	loc = GeoIP.new("#{Rails.root}/data/GeoLiteCity.dat").city(self.ip)
     if loc
-      self.location = "#{loc[4]} #{loc[7]}"
+      self.location = "#{loc[7]}(#{loc[4]})"
       self.save
     end
   end

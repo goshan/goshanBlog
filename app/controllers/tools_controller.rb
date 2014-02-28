@@ -167,7 +167,7 @@ class ToolsController < ApplicationController
   end
 
   def update_ip_location
-    @visitors = Visitor.all#.where("location is NULL")
+    @visitors = Visitor.where("location is NULL")
     @visitors.each do |visitor|
       visitor.find_location
     end
