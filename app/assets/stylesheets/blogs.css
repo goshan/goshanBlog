@@ -77,6 +77,10 @@
 	font-size: 13px;
 }
 
+#blog_detail .blog_attach, #blog_detail .gLink{
+	text-decoration: underline;
+}
+
 #create_comment{
 	background-color: #21bbe1;
 	margin: 60px 10px 0 10px;
