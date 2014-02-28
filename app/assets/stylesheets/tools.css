@@ -70,14 +70,14 @@
 }
 
 /* new_blog */
-#new_blog #link_add{
+#new_blog .trans_add{
 	display: inline-block;
 	border: 1px solid #21bbe1;
 	padding: 5px;
 	margin: 5px;
 }
 
-#new_blog #link_add a{
+#new_blog .trans_add a{
 	color: #21bbe1;
 }
 
