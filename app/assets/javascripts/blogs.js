@@ -24,6 +24,7 @@ function make_comment(){
 					content: $("#create_comment #comment_content").val()
 				}
 			});
+			$("#create_comment #comment_content").val("");
 		}
 		e.preventDefault();
 	});
