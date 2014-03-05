@@ -57,13 +57,12 @@ pre{
 #nav_bar #slogen{
 	color: white;
 	font-size: 30px;
-	font-family: "goshan";
-	margin-bottom: 10px;
+	font-family: fantasy;
 }
 
 #nav_bar #status{
 	font-size: 20px;
-	font-family: "goshan";
+	font-family: fantasy;
 	margin-left: 30px;
 	color: #266792;
 }
@@ -84,7 +83,7 @@ pre{
 
 #side_bar #nick_name{
 	font-size: 25px;
-	font-family: "goshan";
+	font-family: fantasy;
 	text-align: center;
 	color: #21bbe1;
 }

@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'memcache-client'
 gem 'json'
 
-gem 'paperclip'
+gem 'paperclip', '~>3.5.4'
 gem 'uglifier'
 
 gem 'geoip'
