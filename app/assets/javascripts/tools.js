@@ -29,14 +29,15 @@ function on_add_multimedia(){
 	});
 	//add link
 	$("#new_blog #link_add, #edit_blog #link_add").click(function(e){
-		var text_area = $("new_blog form .text_input, #edit_blog form .text_input");
+		console.log("dfadafsd");
+		var text_area = $("#new_blog form .text_input, #edit_blog form .text_input");
 		text_area.val(text_area.val()+"<a class='gLink' href='' target='blank'></a>");
 		
 		e.preventDefault();
 	});
 	//add code
 	$("#new_blog #code_add, #edit_blog #code_add").click(function(e){
-		var text_area = $("new_blog form .text_input, #edit_blog form .text_input");
+		var text_area = $("#new_blog form .text_input, #edit_blog form .text_input");
 		text_area.val(text_area.val()+"<gCode content=\r\n\r\n/>");
 		
 		e.preventDefault();
